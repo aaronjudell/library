@@ -12,10 +12,48 @@
 </head>
 <body>
     <div class="container">
-        <div id="author">Test Author</div>
-        <div id="title">Test Title</div>
-        <div id="pages">3832</div>
-        <div id="read">true</div>
+        <div class="header">
+            <div class="headline">
+                Welcome to Aaron's Library!
+            </div>
+            <div class="new-book">
+                <button class="new-book-button">
+                    New Book
+                </button>
+            </div>
+        </div>
+        <div class="library">
+            <div class="card">
+                <div class="card-author">
+                    Author: 
+                </div>
+                <div class="card-title">
+                    Title:
+                </div>
+                <div class="card-pages">
+                    Pages: 
+                </div>
+                <div class="card-read">
+                    Read Status: 
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+    <form class="book-form">
+        <label for="author">Author: </label>
+        <input type="text" id="author" name="author" required>
+        <label for="title">Title: </label>
+        <input type="text" id="title" name="title" required>
+        <label for="pages">Pages: </label>
+        <input type="tel" id="pages" name="pages" required>
+        <fieldset>
+            <legend>Have you read it?</legend>
+            <label><input type="radio" name="read" id="read-true" required value="true"> Yes </label>
+            <label><input type="radio" name="read" id="read-false" required value="false" checked> No </label>
+        </fieldset>
+        <button type="submit">Add Book</button>
+    </form>
     </div>
 </body>
 </html>
