@@ -14,8 +14,35 @@ a {
 }
 
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
     justify-content: center;
+}
+
+.header {
+    grid-row: 1;
+}
+
+.library {
+    grid-row: 2;
+    display: grid;
+    justify-content: center;
+}
+
+.card {
+    display: grid;
+    grid-template-columns: [labels] auto [answers] auto;
+    grid-gap: .8rem;
+    padding: 1.2rem;
+}
+
+.card-label {
+    grid-column: labels;
+}
+
+.card-answer {
+    grid-column: answers;
 }
 
 .header {
