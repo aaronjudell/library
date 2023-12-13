@@ -8,12 +8,13 @@ function Book(author, title, pages, read) {
     this.read = read;
 }
 
-function addBookToLibrary(book) {
+function addBookToLibrary() {
+    const author = document.querySelector('#author').innerText;
+    const title = document.querySelector('#title').innerText;
+    const pages = document.querySelector('#pages').innerText;
+    const read = document.querySelector('#read').innerText;
+    const book = new Book(author, title, pages, read);
     myLibrary.push(book);
 }
 
-const book1 = new Book('Joe Smith', 'The Woods', 342, true);
-const book2 = new Book('Fred Flinstone', 'The Flinstones', 849, false);
-
-addBookToLibrary(book1);
-addBookToLibrary(book2);
+addBookToLibrary();
