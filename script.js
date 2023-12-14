@@ -36,9 +36,42 @@ function displayBooks() {
         authorAnswer.classList.add('card-answer');
         authorAnswer.innerText = myLibrary[i].author;
 
+        const titleLabel = document.createElement('div');
+        titleLabel.classList.add('card-title');
+        titleLabel.classList.add('card-label');
+        titleLabel.innerText = 'Title: ';
+        const titleAnswer = document.createElement('div');
+        titleAnswer.classList.add('card-title');
+        titleAnswer.classList.add('card-answer');
+        titleAnswer.innerText = myLibrary[i].title;
+
+        const pagesLabel = document.createElement('div');
+        pagesLabel.classList.add('card-pages');
+        pagesLabel.classList.add('card-label');
+        pagesLabel.innerText = 'Pages: ';
+        const pagesAnswer = document.createElement('div');
+        pagesAnswer.classList.add('card-pages');
+        pagesAnswer.classList.add('card-answer');
+        pagesAnswer.innerText = myLibrary[i].pages;
+
+        const readLabel = document.createElement('div');
+        readLabel.classList.add('card-read');
+        readLabel.classList.add('card-label');
+        readLabel.innerText = 'Read? ';
+        const readAnswer = document.createElement('div');
+        readAnswer.classList.add('card-read');
+        readAnswer.classList.add('card-answer');
+        readAnswer.innerText = myLibrary[i].read;
+
         library.appendChild(card);
         card.appendChild(authorLabel);
         card.appendChild(authorAnswer);
+        card.appendChild(titleLabel);
+        card.appendChild(titleAnswer);
+        card.appendChild(pagesLabel);
+        card.appendChild(pagesAnswer);
+        card.appendChild(readLabel);
+        card.appendChild(readAnswer);
     }
 }
 
