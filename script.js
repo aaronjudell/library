@@ -78,5 +78,7 @@ function displayBooks() {
 
 
 book1 = new Book('Jon Smith', 'Clifford the Dog', 273, true, 0);
+book2 = new Book('Jon Arbuckle', 'Garfield', 183, false, 1);
 myLibrary.push(book1);
+myLibrary.push(book2);
 displayBooks();
