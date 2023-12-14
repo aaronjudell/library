@@ -1,4 +1,8 @@
 const myLibrary = [];
+const library = document.querySelector('.library');
+const newBookButton = document.querySelector('.new-book-button');
+const addBookButton = document.querySelector('.add-book-button');
+
 
 function Book(author, title, pages, read, position) {
     // the constructor ...
@@ -17,10 +21,11 @@ function addBookToLibrary() {
     const position = myLibrary.length;
     const book = new Book(author, title, pages, read, position);
     myLibrary.push(book);
+    library.replaceChildren();
+    displayBooks();
 }
 
 function displayBooks() {
-    const library = document.querySelector('.library');
 
     for(let i = 0; i < myLibrary.length; i++) {
         myLibrary[i].position = i;
