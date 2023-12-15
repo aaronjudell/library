@@ -27,6 +27,10 @@ function Book(author, title, pages, read, position) {
     this.pages = pages;
     this.read = read;
     this.position = position;
+    this.deleteBook = function() {
+        myLibrary.splice(this.position,1);
+    };
+
 }
 
 function addBookToLibrary() {
