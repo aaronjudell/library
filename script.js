@@ -29,6 +29,7 @@ function Book(author, title, pages, read, position) {
     this.position = position;
     this.deleteBook = function() {
         myLibrary.splice(this.position,1);
+        displayBooks();
     };
 
 }
@@ -41,7 +42,6 @@ function addBookToLibrary() {
     const position = myLibrary.length;
     const book = new Book(author, title, pages, read, position);
     myLibrary.push(book);
-    library.replaceChildren();
     displayBooks();
 }
 
@@ -57,6 +57,8 @@ function checkReadStatus() {
 }
 
 function displayBooks() {
+
+    library.replaceChildren();
 
     for(let i = 0; i < myLibrary.length; i++) {
         myLibrary[i].position = i;
@@ -99,6 +101,16 @@ function displayBooks() {
         readAnswer.classList.add('card-answer');
         readAnswer.innerText = myLibrary[i].read;
 
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.setAttribute('type', 'button');
+        deleteButton.innerText = 'Delete Book';
+
+        deleteButton.addEventListener('click', () => {
+            myLibrary[i].deleteBook();
+            displayBooks();
+        })
+
         library.appendChild(card);
         card.appendChild(authorLabel);
         card.appendChild(authorAnswer);
@@ -108,6 +120,7 @@ function displayBooks() {
         card.appendChild(pagesAnswer);
         card.appendChild(readLabel);
         card.appendChild(readAnswer);
+        card.appendChild(deleteButton);
     }
 }
 
