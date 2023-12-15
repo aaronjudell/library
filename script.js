@@ -2,6 +2,22 @@ const myLibrary = [];
 const library = document.querySelector('.library');
 const newBookButton = document.querySelector('.new-book-button');
 const addBookButton = document.querySelector('.add-book-button');
+const cancelButton = document.querySelector('.cancel-button');
+const dialog = document.querySelector('.form-container');
+const form = document.querySelector('.book-form');
+
+newBookButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+cancelButton.addEventListener('click', () => {
+    dialog.close();
+});
+
+form.addEventListener('submit', () => {
+    addBookToLibrary();
+    form.reset();
+});
 
 
 function Book(author, title, pages, read, position) {
@@ -14,15 +30,26 @@ function Book(author, title, pages, read, position) {
 }
 
 function addBookToLibrary() {
-    const author = document.querySelector('#author').innerText;
-    const title = document.querySelector('#title').innerText;
-    const pages = document.querySelector('#pages').innerText;
-    const read = document.querySelector('#read').innerText;
+    const author = document.querySelector('#author').value;
+    const title = document.querySelector('#title').value;
+    const pages = document.querySelector('#pages').value;
+    const read = checkReadStatus();
     const position = myLibrary.length;
     const book = new Book(author, title, pages, read, position);
     myLibrary.push(book);
     library.replaceChildren();
     displayBooks();
+}
+
+function checkReadStatus() {
+    radio1 = document.querySelector('#read-true');
+    radio2 = document.querySelector('#read-false');
+
+    if (radio1.checked) {
+        return 'Yes';
+    } else {
+        return 'No';
+    }
 }
 
 function displayBooks() {
