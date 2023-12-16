@@ -60,11 +60,31 @@ a {
 
 .readstatus-button {
     margin-left: 10px;
-    
+    background-color: #0284c7;
+    border: 1px solid black;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
 }
 
 .delete-button {
     grid-column: answers;
+}
+
+.add-book-button, .cancel-button, .delete-button {
+    background-color: #0284c7;
+    border: 1px solid black;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
 }
 
 .header {
@@ -86,6 +106,18 @@ a {
 
 .new-book {
     place-self: center;
+}
+
+.new-book-button {
+    background-color: lightcoral;
+    border: 1px solid black;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
 }
 
 .book-form {
