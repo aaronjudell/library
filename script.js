@@ -27,10 +27,20 @@ function Book(author, title, pages, read, position) {
     this.pages = pages;
     this.read = read;
     this.position = position;
+
     this.deleteBook = function() {
         myLibrary.splice(this.position,1);
         displayBooks();
     };
+
+    this.changeReadStatus = function() {
+        if (this.read === true) {
+            this.read = false;
+        } else {
+            this.read = true;
+        }
+        displayBooks();
+    }
 
 }
 
@@ -99,7 +109,10 @@ function displayBooks() {
         const readAnswer = document.createElement('div');
         readAnswer.classList.add('card-read');
         readAnswer.classList.add('card-answer');
-        readAnswer.innerText = myLibrary[i].read;
+        readAnswer.classList.add('read-answer');
+        const readAnswerText = document.createElement('div');
+        readAnswerText.classList.add('read-answer-text');
+        readAnswerText.innerText = myLibrary[i].read;
 
         const deleteButton = document.createElement('button');
         deleteButton.classList.add('delete-button');
@@ -111,6 +124,15 @@ function displayBooks() {
             displayBooks();
         })
 
+        const readStatusButton = document.createElement('button');
+        readStatusButton.classList.add('readstatus-button')
+        readStatusButton.setAttribute('type', 'button');
+        readStatusButton.innerText = 'Change Status';
+
+        readStatusButton.addEventListener('click', () => {
+            myLibrary[i].changeReadStatus();
+        })
+
         library.appendChild(card);
         card.appendChild(authorLabel);
         card.appendChild(authorAnswer);
@@ -120,6 +142,8 @@ function displayBooks() {
         card.appendChild(pagesAnswer);
         card.appendChild(readLabel);
         card.appendChild(readAnswer);
+        readAnswer.appendChild(readAnswerText);
+        readAnswer.appendChild(readStatusButton);
         card.appendChild(deleteButton);
     }
 }

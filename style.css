@@ -31,7 +31,7 @@ a {
 
 .card {
     display: grid;
-    grid-template-columns: minmax(30px, auto) [labels] auto [answers] auto;
+    grid-template-columns: minmax(auto, auto) [labels] auto [answers] auto;
     grid-gap: .8rem;
     padding: 1.2rem;
     border: 1px solid black;
@@ -49,6 +49,18 @@ a {
     grid-column: answers;
     padding-right: 40%;
     align-self: center;
+}
+
+.read-answer {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.readstatus-button {
+    margin-left: 10px;
+    
 }
 
 .delete-button {
