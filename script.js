@@ -34,10 +34,10 @@ function Book(author, title, pages, read, position) {
     };
 
     this.changeReadStatus = function() {
-        if (this.read === true) {
-            this.read = false;
+        if (this.read === 'Yes') {
+            this.read = 'No';
         } else {
-            this.read = true;
+            this.read = 'Yes';
         }
         displayBooks();
     }
@@ -150,8 +150,8 @@ function displayBooks() {
 
 
 
-book1 = new Book('Jon Smith', 'Clifford the Dog', 273, true, 0);
-book2 = new Book('Jon Arbuckle', 'Garfield', 183, false, 1);
+book1 = new Book('Jon Smith', 'Clifford the Dog', 273, 'Yes', 0);
+book2 = new Book('Jon Arbuckle', 'Garfield', 183, 'No', 1);
 myLibrary.push(book1);
 myLibrary.push(book2);
 displayBooks();
